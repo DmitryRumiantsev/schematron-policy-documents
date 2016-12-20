@@ -6,8 +6,8 @@
 <iso:ns uri="http://ns.adobe.com/xap/1.0/" prefix="xmp" />
      <iso:pattern name="Check if author is defined in metadata">
           <iso:rule context="/report/jobs/job/featuresReport">
-               <iso:report test="metadata/xmpPackage/x:xmpmeta/rdf:RDF/rdf:Description/xmp:Author/*[text()] or not(metadata/xmpPackage/x:xmpmeta/rdf:RDF/rdf:Description/@xmp:Author='')">Author is defined in metadata</iso:report>
-               <iso:assert test="metadata/xmpPackage/x:xmpmeta/rdf:RDF/rdf:Description/xmp:Author/*[text()] or not(metadata/xmpPackage/x:xmpmeta/rdf:RDF/rdf:Description/@xmp:Author='')">Author  is not defined in metadata or empty</iso:assert>
+               <iso:report test="metadata/xmpPackage/x:xmpmeta/rdf:RDF/rdf:Description/xmp:Author/*[text()] or (metadata/xmpPackage/x:xmpmeta/rdf:RDF/rdf:Description/@xmp:Author and not(metadata/xmpPackage/x:xmpmeta/rdf:RDF/rdf:Description/@xmp:Author=''))">Author is defined in metadata</iso:report>
+               <iso:assert test="metadata/xmpPackage/x:xmpmeta/rdf:RDF/rdf:Description/xmp:Author/*[text()] or (metadata/xmpPackage/x:xmpmeta/rdf:RDF/rdf:Description/@xmp:Author and not(metadata/xmpPackage/x:xmpmeta/rdf:RDF/rdf:Description/@xmp:Author=''))">Author  is not defined in metadata or empty</iso:assert>
           </iso:rule>
      </iso:pattern>
 </iso:schema>
